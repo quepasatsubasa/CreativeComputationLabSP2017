@@ -1,36 +1,50 @@
+var x = 0;
+var speed = 2;
+var direction = 1;
+
+var r = 250;
+var g = 0;
+var b = 0;
+
 function setup() {
-  createCanvas(640,640);
-  background (91,222,255);
+  createCanvas(400,400);
+  background(250,250,250)
 }
 
+
 function draw() {
-  noStroke();
-  fill(255,222,255);
-  ellipse(320, 250, 200, 300);
-  fill(20,20,20);
-  ellipse(270,200, 40, 20);
-   ellipse(380,200, 40, 20);
-   fill(255,255,255);
-     ellipse(270,200, 10, 10);
-   ellipse(380,200, 10, 10);
-   fill(230,150,0);
-   rect(320,250,20,20);
-   fill(200,10,10);
-   ellipse(325,350,50,10);
-    ellipse(325,335,50,10);
-  fill(0,0,0);
-  rect(300,62,2,40);
-  rect(260,87,2,40);
-  rect(270,80,2,40);
-  rect(280,74,2,40);
-  rect(290,70,2,40);
-  rect(310,60,2,40);
-  rect(320,60,2,40);
-  rect(330,61,2,40);
-  rect(340,64,2,40);
-  rect(350,70,2,40);
-  rect(360,72,2,40);
-  rect(370,81,2,40);
-  rect(380,87,2,40);
-   
+  background(250,250,250);
+  stroke(255);
+  strokeWeight(4);
+  fill(r,g,b);
+  ellipse(x,200,100,100);
+  
+  if(direction == 1){
+     x = x + direction*speed;
+  } 
+  
+  if (x > width){
+    direction = -1
+    speed++
+    r = random(0,255);
+    g = random(0,255);
+    b = random(0,255);
+  }
+  
+  
+ if(direction == -1){
+    direction = -1;
+    x = x + direction*speed;
+  } 
+  
+  if (x < 0){
+    direction = 1
+    speed++
+    r = random(0,255);
+    g = random(0,255);
+    b = random(0,255);
+  }
+  
+  
+  
 }
